@@ -11,3 +11,44 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+setopt PUSHD_TO_HOME
+setopt EXTENDED_GLOB
+setopt CLOBBER
+
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+PATH="$NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)/bin:$PATH"
+PATH="$RBENV_DIR/shims:$PATH"
+
+function export_env()
+{
+    builtin export "$@"
+    if [[ ${#@} -eq 1 && "${@//[^=]/}" ]]
+    then
+        launchctl setenv "${@%%=*}" "${@##*=}"
+    elif [[ ! "${@//[^ ]/}" ]]
+    then
+        launchctl setenv "${@}" "${=@}"
+    fi
+}
+
+alias pg_start="nohup pg_ctl -D /usr/local/var/postgres start &>/dev/null & disown"
+alias pg96_start="nohup $PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6 start &>/dev/null & disown"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
+alias pg96_stop="$PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6 stop"
+alias pg_restart="nohup pg_ctl -D /usr/local/var/postgres restart &>/dev/null & disown"
+alias pg96_restart="nohup $PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6 restart &>/dev/null & disown"
+alias pg_status="pg_ctl -D /usr/local/var/postgres status"
+alias pg96_status="$PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6 status"
+alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@"
+alias fastlane="unalias fastlane; bundle exec fastlane $@"
+
+export_env JAVA_HOME=$JAVA8_HOME
+export_env JDK_HOME=$JAVA8_HOME
+export_env JRE_HOME=$JAVA8_HOME/jre
+export_env ANDROID_HOME=/Users/kaan/dev/sdk/android-sdk-macosx/
+export_env GIT_SSH_COMMAND=ssh
+export_env PATH=$PATH
