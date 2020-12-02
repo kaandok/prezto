@@ -44,7 +44,6 @@ alias pg96_restart="nohup $PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6
 alias pg_status="pg_ctl -D /usr/local/var/postgres status"
 alias pg96_status="$PG96_HOME/bin/pg_ctl -D /usr/local/var/postgresql@9.6 status"
 alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@"
-alias fastlane="unalias fastlane; bundle exec fastlane $@"
 
 export_env JAVA_HOME=$JAVA8_HOME
 export_env JDK_HOME=$JAVA8_HOME
