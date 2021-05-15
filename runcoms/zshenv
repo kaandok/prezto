@@ -5,8 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-JAVA8_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-JAVA11_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+JAVA8_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+JAVA11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 PG96_HOME=/usr/local/opt/postgresql@9.6
 NVM_DIR="$HOME/.nvm"
 RBENV_DIR="$HOME/.rbenv"
