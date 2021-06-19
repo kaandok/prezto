@@ -5,10 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-JAVA8_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk
-PATH="$JAVA8_HOME/bin:$PATH"
-JAVA11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk
-PG96_HOME=/usr/local/opt/postgresql@9.6
+JAVA8_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/zulu-8.jdk/Contents/Home
+JAVA11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/zulu-11.jdk/Contents/Home
+PATH="$JAVA11_HOME/bin:$PATH"
+ANDROID_HOME=/Users/kaan/dev-sdk/android
 NVM_DIR="$HOME/.nvm"
 RBENV_DIR="$HOME/.rbenv"
 
